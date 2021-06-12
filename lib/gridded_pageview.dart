@@ -1,3 +1,7 @@
+/// Copyright (c) 2021, Wilkin van Roosmalen
+/// This file is part of the "gridded_pageview" Flutter package and is released under the BSD 3-Clause License
+
+
 library flutter_gridded_pageview;
 
 import 'package:flutter/cupertino.dart';
