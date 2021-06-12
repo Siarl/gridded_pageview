@@ -10,8 +10,8 @@ class GriddedPageView extends StatelessWidget {
   final List<Widget> children;
   final bool showIndicator;
   final bool overlapIndicator;
-  final int preferredChildWidth;
-  final int preferredChildHeight;
+  final int minChildWidth;
+  final int minChildHeight;
   final ValueChanged<int>? onPageChanged;
   final ValueChanged<int>? onPageAmountChanged;
   final EdgeInsets indicatorPadding;
@@ -22,8 +22,8 @@ class GriddedPageView extends StatelessWidget {
   GriddedPageView({
     required this.controller,
     required this.children,
-    required this.preferredChildWidth,
-    required this.preferredChildHeight,
+    required this.minChildWidth,
+    required this.minChildHeight,
     this.onPageChanged,
     this.onPageAmountChanged,
     this.showIndicator: true,
@@ -94,13 +94,13 @@ class GriddedPageView extends StatelessWidget {
   }
 
   int _calcRows(BoxConstraints constraints) {
-    int rows = (_availableHeight(constraints) / preferredChildHeight).floor();
-    return (rows < 1)? 1 : (_availableHeight(constraints) / preferredChildHeight).floor();
+    int rows = (_availableHeight(constraints) / minChildHeight).floor();
+    return (rows < 1)? 1 : (_availableHeight(constraints) / minChildHeight).floor();
   }
 
   int _calcColumns(BoxConstraints constraints) {
-    int columns = (_availableWidth(constraints) / preferredChildWidth).floor();
-    return (columns < 1)? 1 : (_availableWidth(constraints) / preferredChildWidth).floor();
+    int columns = (_availableWidth(constraints) / minChildWidth).floor();
+    return (columns < 1)? 1 : (_availableWidth(constraints) / minChildWidth).floor();
   }
 
   double _calcAspectRatio(BoxConstraints constraints) {

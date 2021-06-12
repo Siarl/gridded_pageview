@@ -39,8 +39,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: GriddedPageView(
         controller: _controller,
-        preferredChildWidth: 160,
-        preferredChildHeight: 160,
+        minChildWidth: 160,
+        minChildHeight: 160,
         children: List<Widget>.generate(20, (int index) {
           return Container(
             color: Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0),
